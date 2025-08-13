@@ -1,0 +1,1104 @@
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #121212;
+  --text-light: #1a1a1a;
+  --text-dark: #ffffff;
+  --accent-color: #007b83;
+  --hover-color: #00adb5;
+  --nav-bg-light: #ffffffee;
+  --nav-bg-dark: #1e1e1eee;
+  --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+/* Dark Mode */
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+
+
+/* === Navbar === */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: var(--nav-bg-light);
+  box-shadow: var(--nav-shadow);
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease;
+}
+
+body.dark .navbar {
+  background-color: var(--nav-bg-dark);
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+body.dark .nav-links li a {
+  color: var(--text-dark);
+}
+
+/* Hover underline animation */
+.nav-links li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--accent-color);
+  width: 0%;
+  transition: width 0.3s;
+  margin-top: 4px;
+}
+
+body.dark .nav-links li a::after {
+  background: var(--hover-color);
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: var(--hover-color);
+}
+
+/* Theme toggle */
+#theme-toggle {
+  font-size: 1.3em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Hero Section === */
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 100px 10%;
+  flex-wrap: wrap;
+  background: inherit;
+  gap: 40px;
+}
+
+.hero-left img {
+  width: 350px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.hero-left img:hover {
+  transform: scale(1.05);
+}
+
+.hero-right {
+  max-width: 400px;
+  text-align: left;
+}
+
+.hero-right .highlight {
+  color: var(--hover-color);
+  font-weight: 600;
+}
+
+/* Hero Button */
+.btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: linear-gradient(135deg, var(--accent-color), #007b83);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #007b83, #269298);
+}
+
+body.dark .btn {
+  background: linear-gradient(135deg, #305d7d, #007b83);
+}
+
+body.dark .btn:hover {
+  background: linear-gradient(135deg, #007b83, #305d7d);
+}
+
+/* Section Styling */
+section {
+  background-color: inherit;
+  color: inherit;
+  padding: 60px 10%;
+}
+
+/* Section Headings */
+section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+body.dark section h2 {
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--hover-color);
+}
+
+/* Responsive Hero Section */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .hero-left,
+  .hero-right {
+    margin-top: 20px;
+  }
+
+  .hero-right {
+    text-align: center;
+  }
+}
+
+
+
+
+#rotating-text {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: var(--text-light);
+  border-right: 2px solid #0a0a0a;
+  white-space: nowrap;
+  overflow: visible;        /* ✅ make sure it's not clipping */
+  width: 100%;              /* ✅ allow full width */
+  max-width: 100%;
+  display: inline-block;
+}
+
+body.dark #rotating-text {
+  color: var(--text-dark);
+  border-color: #eee;
+}
+
+@media (max-width: 600px) {
+  #rotating-text {
+    font-size: 1em;
+    white-space: normal;  /* allow wrapping if needed */
+    border-right: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === About Section === */
+.about {
+  text-align: center;
+  padding: 60px 10%;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.about p {
+  font-size: 1.15em;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: auto;
+  color: var(--text-light);
+}
+
+body.dark .about {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark .about p {
+  color: var(--text-dark);
+}
+
+
+/* === Project Section === */
+.projects {
+  padding: 60px 10%;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark .projects {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.projects .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Project Card */
+.project-card {
+  background: #fff3f3;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  background-color: #ffe5e5;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  color: #101010;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #007b83;
+}
+
+.short-desc {
+  color: #444;
+  font-size: 0.95em;
+  margin-top: 8px;
+}
+
+/* Dark Mode */
+body.dark .project-card {
+  background-color: #bebdbd;
+  color: #e8e8e8;
+  border: 1px solid #444;
+}
+
+body.dark .project-card:hover {
+  background-color: #373737;
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .short-desc {
+  color: #080707;
+}
+
+/* === Modal Overlay === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  margin: 10% auto;
+  position: relative;
+  color: #222;
+  line-height: 1.6;
+}
+
+body.dark .modal-content {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+}
+
+body.dark .modal-content a {
+  color: #00adb5;
+  text-decoration: underline;
+}
+
+/* Modal Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff4444;
+  z-index: 1001;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Skills Section === */
+#skills {
+  padding: 60px 10%;
+  background: var(--bg-light);
+  color: var(--text-light);
+  text-align: center;
+}
+
+body.dark #skills {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* === Grid Layout for Categories === */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* === Individual Skill Box === */
+.skill-box {
+  background: #fff3f3;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  background: #ffe9e9;
+}
+
+body.dark .skill-box {
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  box-shadow: 0 6px 14px rgba(255, 255, 255, 0.04);
+}
+
+body.dark .skill-box:hover {
+  background-color: #373737;
+}
+
+.skill-box h3 {
+  color: #0c0c0c;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+body.dark .skill-box h3 {
+  color: #e2e2e2;
+}
+
+/* === Donut Progress Grid === */
+.circle-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+/* === Donut Style === */
+.circle {
+  text-align: center;
+  width: 120px;
+}
+
+.outer {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(#00ADB5 0%, #e0e0e0 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.inner {
+  width: 65px;
+  height: 65px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.dark .inner {
+  background: #2a2a2a;
+}
+
+.number {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+body.dark .number {
+  color: #eee;
+}
+
+.circle p {
+  margin-top: 8px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+body.dark .circle p {
+  color: var(--text-dark);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .circle {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Certificates Grid Layout === */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* === Certificate Card === */
+.cert-card {
+  background: #eef6fa;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border: 1px solid #ddeff2;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  background: #d9ecf3;
+}
+
+.cert-card h4 {
+  margin: 10px 0 6px;
+  color: #147b8b;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.cert-card p {
+  color: #333;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* === Dark Mode === */
+body.dark .cert-card {
+  background-color: #262626;
+  border: 1px solid #444;
+  box-shadow: 0 6px 14px rgba(255, 255, 255, 0.03);
+}
+
+body.dark .cert-card:hover {
+  background-color: #303030;
+}
+
+body.dark .cert-card h4 {
+  color: #8ae2ee;
+}
+
+body.dark .cert-card p {
+  color: #ccc;
+}
+
+/* === Certificate Preview Modal === */
+.popup {
+  display: none;
+  position: fixed;
+  padding-top: 100px;
+  z-index: 999;
+  top: 50%;
+  left: 5%;
+  width: 70%;
+  height: 70%;
+  background: #e9f2f5;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.popup iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: none;
+}
+
+body.dark .popup {
+  background: #1e1e1e;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* === Close Button === */
+.close-btn {
+  position: absolute;
+  padding-top: 95px;
+  top: 10px;
+  right: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ff4c4c;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+body.dark .close-btn {
+  color: #ff7070;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg-light: #f0f9f9;
+  --bg-dark: #121212;
+  --text-light: #2c2c2c;
+  --text-dark: #ffffff;
+  --accent: #0c0c0c;
+}
+
+/* === Education Section === */
+#education {
+  padding: 60px 10%;
+  background: var(--bg-light);
+  color: var(--text-light);
+  text-align: center;
+}
+
+body.dark #education {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+#education h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  padding-bottom: 8px;
+  text-align: center;
+  color: var(--text-light);
+  border-bottom: 2px solid var(--accent);
+}
+
+body.dark #education h2 {
+  color: var(--text-dark);
+  border-bottom: 2px solid #00ADB5;
+}
+
+/* === Flip Grid === */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* === Flip Card === */
+.flip-card {
+  width: 260px;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* === Front & Back === */
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* === Front === */
+.flip-front {
+  background-color: #e7f6fb;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* === Back === */
+.flip-back {
+  background-color: #1a1a1a;
+  color: #f9f9f9;
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 20px;
+}
+
+body.dark .flip-front {
+  background-color: #333;
+  color: #eee;
+}
+
+body.dark .flip-back {
+  background-color: #2b2b2b;
+  color: #eee;
+}
+
+/* === Memo Thumbnails === */
+.memo-thumbnail img {
+  width: 90%;
+  max-height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.memo-thumbnail img:hover {
+  transform: scale(1.05);
+}
+
+/* === Modal === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 95vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.4);
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.modal-content.zoomed {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
+
+.close-btn {
+  position: absolute;
+  padding-top: 95px;
+  top: 15px;
+  right: 30px;
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .modal-content {
+    max-width: 95%;
+    max-height: 80vh;
+  }
+
+  .flip-card {
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* === Resume Popup Modal === */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: #f7f7f7;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+body.dark .popup {
+  background: #1e1e1e;
+}
+
+.popup iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: none;
+}
+
+.resume-buttons {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ff3333;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.2s ease;
+}
+
+body.dark .close-btn {
+  color: #ff6666;
+}
+
+/* === Contact Section === */
+.contact {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  padding: 60px 10%;
+}
+
+body.dark .contact {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-light);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+body.dark .contact h2 {
+  color: var(--text-dark);
+  border-bottom: 2px solid #00ADB5;
+}
+
+.contact p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: var(--text-light);
+  text-align: center;
+}
+
+body.dark .contact p {
+  color: var(--text-dark);
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1em;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00adb5;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #5480ac;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #247d80;
+}
+
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+  background-color: #2a2a2a;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+body.dark .contact-form input:focus,
+body.dark .contact-form textarea:focus {
+  border-color: #00adb5;
+}
+
+body.dark .contact-form button {
+  background-color: #305d7d;
+}
+
+body.dark .contact-form button:hover {
+  background-color: #1a4c5e;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* === Footer Section === */
+.footer {
+  text-align: center;
+  padding: 30px 10%;
+  background: var(--bg-light);
+  color: var(--text-light);
+  margin-top: 60px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.dark .footer {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer .social-icons {
+  margin-top: 10px;
+}
+
+.footer a {
+  margin: 0 10px;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00adb5;
+}
+
+body.dark .footer a {
+  color: var(--text-dark);
+}
+
+body.dark .footer a:hover {
+  color: #00adb5;
+}
+
+/* Rotating Text */
+#rotating-text {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: var(--text-light);
+  border-right: 2px solid var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+body.dark #rotating-text {
+  color: var(--text-dark);
+  border-color: #eee;
+}
+
+/* Section Headings Refinement (Redundant override cleanup) */
+section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--accent);
+  color: var(--text-light);
+}
+
+body.dark section h2 {
+  color: var(--text-dark);
+  border-color: #00adb5;
+}
