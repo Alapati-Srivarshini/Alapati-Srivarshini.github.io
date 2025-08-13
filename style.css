@@ -32,6 +32,7 @@ body.dark {
 
 
 /* === Navbar === */
+/* === Navbar === */
 .navbar {
   position: fixed;
   top: 0;
@@ -48,6 +49,7 @@ body.dark {
   transition: background-color 0.3s ease;
 }
 
+/* Dark mode navbar */
 body.dark .navbar {
   background-color: var(--nav-bg-dark);
 }
@@ -62,14 +64,15 @@ body.dark .navbar {
 
 .nav-links li a {
   text-decoration: none;
-  color: var(--text-light);
+  color: #000; /* Dark text for light mode */
   font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
 }
 
+/* Dark mode links */
 body.dark .nav-links li a {
-  color: var(--text-dark);
+  color: #fff; /* Light text for dark mode */
 }
 
 /* Hover underline animation */
@@ -84,7 +87,7 @@ body.dark .nav-links li a {
 }
 
 body.dark .nav-links li a::after {
-  background: var(--hover-color);
+  background: #ff9800;
 }
 
 .nav-links li a:hover::after {
@@ -92,7 +95,38 @@ body.dark .nav-links li a::after {
 }
 
 .nav-links li a:hover {
-  color: var(--hover-color);
+  color: #ff9800;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--nav-bg-light);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+  }
+  body.dark .nav-links {
+    background: var(--nav-bg-dark);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
 }
 
 /* Theme toggle */
@@ -107,6 +141,7 @@ body.dark .nav-links li a::after {
 #theme-toggle:hover {
   transform: rotate(20deg);
 }
+
 
 
 
