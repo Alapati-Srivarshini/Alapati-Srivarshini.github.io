@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ALAPATI SRIVARSHINI | Portfolio</title>
+  <link rel="icon" href="sri1.jpg" type="image.jpg">
+  <link rel="stylesheet" href="style.css"/>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <script>
+  function openMemo(path) {
+    const modal = document.getElementById("memo-modal");
+    const fullImg = document.getElementById("memo-full");
+    modal.style.display = "block";
+    fullImg.src = path;
+  }
+
+  function closeMemo() {
+    document.getElementById("memo-modal").style.display = "none";
+    document.getElementById("memo-full").src = "";
+  }
+</script>
+
+</head>
+<body>
+  <!-- ===== Navbar ===== -->
+  <header>
+    <nav class="navbar sticky">
+      <div class="logo">Alapati Srivarshini</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certificates</a></li>
+        <li><a href="#education">Academic</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="theme-toggle">🌞</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section id="home" class="hero">
+    <div class="hero-left">
+      <img src="sri.jpg" alt="My Photo" class="profile-img"/>
+    </div>
+
+    <div class="hero-right">
+      <h1>Hello, I'm <span class="highlight">SRIVARSHINI</span></h1>
+      <p id="rotating-text"></p>
+    </div>
+
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Alapati Srivarshini, a passionate and detail-oriented Computer Science Engineer specializing in Artificial Intelligence & Machine Learning.
+      I enjoy turning ideas into reality through clean, responsive, and user-friendly web applications. With a strong foundation in programming, data handling, and problem-solving, I love working on projects that combine creativity with technology.</p>
+      <P>I’m constantly learning new tools, frameworks, and trends to stay ahead in the fast-paced tech world. Whether it’s designing elegant interfaces, optimizing performance, or exploring data-driven insights, my goal is to create solutions that are impactful, efficient, and future-ready.</p>
+
+  </section>
+
+  <!-- ===== Projects Section ===== -->
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+    
+    <div class="project-grid">
+  
+      <!-- Project Card 1 -->
+      <div class="project-card" onclick="openModal('autocorrect')">
+        <h3>Smart Autocorrect System</h3>
+        <p class="short-desc">Click to view more</p>
+        <a href="https://github.com/srivarshini1012/Smart-Autocorrect-System" target="_blank">GitHub</a>
+      </div>
+
+      <!-- Matching Modal -->
+      <div id="autocorrect" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('autocorrect')">&times;</span>
+          <h3>Smart Autocorrect System</h3>
+          <p>
+           A real-time NLP-based autocorrection system using Flask. It uses weighted edit distance, grammar check, and a custom dictionary to fix spelling and sentence errors. The tool can handle full-sentence correction and offers multiple suggestions for each word.
+          </p>
+          <a href="https://github.com/srivarshini1012/Smart-Autocorrect-System" target="_blank">GitHub Repository</a>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="project-card" onclick="openModal('faceRecog')">
+      <h3>Face Recognition Attendance</h3>
+      <p class="short-desc">Click to view more</p>
+      <a href="https://github.com/srivarshini1012/Real-Time-Attendance-Monitoring-System." target="_blank">GitHub</a>
+      </div>
+
+      <!-- Matching Modal -->
+      <div id="faceRecog" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('faceRecog')">&times;</span>
+          <h3>Real-Time Face Recognition Attendance System</h3>
+          <p>
+            A real-time face attendance system using Python, Flask, and OpenCV. It detects and identifies student faces via webcam and logs their attendance into a CSV. It helps eliminate manual processes and reduces proxy attendance in classrooms.
+          </p>
+          <a href="https://github.com/srivarshini1012/Real-Time-Attendance-Monitoring-System." target="_blank">GitHub Repository</a>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="project-card" onclick="openModal('notifier')">
+        <h3>Desktop Notifier Application</h3>
+        <p class="short-desc">Click to view more</p>
+        <a href="https://github.com/srivarshini1012/Desktop-Notifier" target="_blank">GitHub</a>
+      </div>
+
+      <!-- Matching Modal -->
+      <div id="notifier" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('notifier')">&times;</span>
+          <h3>Desktop Notifier Application</h3>
+          <p>
+            A productivity tool built with Python and Tkinter that reminds users of tasks through pop-up system notifications using the Plyer library. Perfect for staying organized and managing time efficiently.
+          </p>
+          <a href="https://github.com/srivarshini1012/Desktop-Notifier" target="_blank">GitHub Repository</a>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+  <!-- ===== Skills Section ===== -->
+
+
+
+  <section id="skills">
+  <h2>My Skills</h2>
+  <div class="category-grid">
+
+    <!-- 1. Web Dev -->
+    <div class="skill-box">
+      <h3>🌐 Web Development</h3>
+      <div class="circle-grid">
+        <div class="circle" data-percent="90"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>HTML</p></div>
+        <div class="circle" data-percent="85"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>CSS</p></div>
+        <div class="circle" data-percent="75"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>JavaScript</p></div>
+      </div>
+    </div>
+
+    <!-- 2. Programming -->
+    <div class="skill-box">
+      <h3>💻 Programming</h3>
+      <div class="circle-grid">
+        <div class="circle" data-percent="90"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>Python</p></div>
+      </div>
+    </div>
+
+    <!-- 3. Data & BI -->
+    <div class="skill-box">
+      <h3>📊 Data Analytics & BI</h3>
+      <div class="circle-grid">
+        <div class="circle" data-percent="85"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>Power BI</p></div>
+        <div class="circle" data-percent="75"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>Tableau</p></div>
+      </div>
+    </div>
+
+    <!-- 4. Gen AI -->
+    <div class="skill-box">
+      <h3>🤖 Generative AI & Tools</h3>
+      <div class="circle-grid">
+        <div class="circle" data-percent="90"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>ChatGPT</p></div>
+        <div class="circle" data-percent="85"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>Canva AI</p></div>
+        <div class="circle" data-percent="75"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>DALL·E</p></div>
+        <div class="circle" data-percent="70"><div class="outer"><div class="inner"><div class="number">0%</div></div></div><p>Midjourney</p></div>
+      </div>
+    </div>
+
+  </div>
+  </section>
+
+
+
+    
+
+
+  <!-- ===== Certificates Section ===== -->
+  
+
+  <section id="certifications">
+  <h2>📜 Certifications</h2>
+
+  <div class="cert-grid">
+    
+
+    <div class="cert-card" onclick="openPopup('Full stack web development.pdf')">
+      <h4>Full Stack WED Development</h4>
+      <p>Completed a comprehensive bootcamp covering front-end and back-end technologies including HTML, CSS, JavaScript, Node.js, and MongoDB.</p>
+    </div>
+
+    <div class="cert-card" onclick="openPopup('Deloitte.pdf')">
+      <h4>Data Analytics Simulation</h4>
+      <p>Participated in Deloitte's virtual internship on Forage, analyzing real business data to deliver actionable insights.</p>
+    </div>
+
+
+    <div class="cert-card" onclick="openPopup('UC.jpg')">
+      <h4>Python Programming – Beginner to Master</h4>
+      <p>Gained in-depth knowledge of Python programming from basics to advanced concepts including data structures, OOP, file handling, and real-world project building using Python.</p>
+    </div>
+
+    <div class="cert-card" onclick="openPopup('Power BI.pdf')">
+      <h4>Power BI</h4>
+      <p>Learned to build interactive dashboards and reports using Power BI, covering data modeling, DAX, and data visualization techniques for business intelligence.</p>
+    </div>
+
+    <div class="cert-card" onclick="openPopup('chatgpt-masterclass.pdf')">
+      <h4>ChatGPT</h4>
+      <p>Completed a masterclass on using ChatGPT effectively for prompt engineering, productivity, and creative AI tasks.</p>
+    </div>
+
+    <div class="cert-card" onclick="openPopup('pythonds.pdf')">
+      <h4>Python-101 for DS </h4>
+      <p>Earned foundational knowledge in Python programming, data types, loops, and functions through IBM’s Cognitive Class platform.</p>
+    </div>
+
+    <div class="cert-card" onclick="openPopup('js.jpg')">
+      <h4>JavaScript Fundamentals </h4>
+      <p>Learned the core concepts of JavaScript including variables, functions, arrays, conditionals, and DOM manipulation to build dynamic web applications.</p>
+    </div>
+
+    <div class="cert-card" onclick="openPopup('nptel.jpg')">
+      <h4>Deep Learning – NPTEL (IIT) </h4>
+      <p>Gained foundational knowledge of deep learning concepts such as neural networks, backpropagation, CNNs, RNNs, and their applications in real-world AI problems.</p>
+    </div>
+
+
+
+  </div>
+
+  <!-- Modal Preview -->
+  <div id="cert-popup" class="popup">
+    <span class="close-btn" onclick="closePopup()">×</span>
+    <iframe id="cert-frame" src="" frameborder="0"></iframe>
+  </div>
+
+
+  </section>
+
+
+
+
+
+
+
+  <section id="education">
+  <h2>🎓 Academic Journey</h2>
+  <div class="flip-grid">
+
+    <!-- B.Tech -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>🎓 B.Tech – CSE (AIML)</h3>
+        </div>
+        <div class="flip-back">
+          <h4>2021 – 2025</h4>
+          <p>🎓 Graduated with a Bachelor’s in Computer Science & Engineering (AIML), gaining hands-on experience in AI, ML, and full-stack development. Built multiple academic and personal projects, sharpening my problem-solving and innovation skills.</p>
+          <div class="memo-thumbnail" onclick="openMemo('assets/memos/btech.jpg')">
+            <img src="assets/memos/btech.jpg" alt="B.Tech Memo">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Intermediate -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>🏫 Intermediate (MPC)</h3>
+        </div>
+        <div class="flip-back">
+          <h4>2019 – 2021</h4>
+          <p>📚 Completed Mathematics, Physics, and Chemistry with strong analytical skills and logical thinking. Developed a problem-solving mindset that later became essential in programming and AI concepts.</p>
+          <div class="memo-thumbnail" onclick="openMemo('assets/memos/inter.jpg')">
+            <img src="assets/memos/inter.jpg" alt="Inter Memo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SSC -->
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <h3>📘 SSC / 10th Grade</h3>
+        </div>
+        <div class="flip-back">
+          <h4>2018 – 2019</h4>
+          <p>🌱 Achieved a solid academic foundation, excelling in core subjects and actively participating in co-curricular activities, fostering discipline, teamwork, and curiosity for technology.</p>
+          <div class="memo-thumbnail" onclick="openMemo('assets/memos/10th.jpg')">
+            <img src="assets/memos/10th.jpg" alt="10th Memo">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 📌 Modal -->
+  <div id="memo-modal" class="modal" onclick="closeMemo()">
+    <span class="close-btn" onclick="closeMemo()">×</span>
+    <img class="modal-content" id="memo-full" alt="Full Memo">
+    <a id="memo-download" class="btn download-btn" href="#" download target="_blank">Download Memo</a>
+  </div>
+  
+  <div>
+  <p>
+    From a strong academic foundation in school to mastering core concepts in Mathematics and Science during Intermediate, and finally graduating with a B.Tech in Computer Science & Engineering (AI & ML), my education has been a continuous journey of learning, innovation, and skill-building in technology.</p>
+  </div>
+
+  </section>
+
+
+
+
+  <section id="resume" class="resume">
+  <h2>📄 My Resume</h2>
+  <p>You can view or download my resume below:</p>
+
+  <div class="resume-buttons">
+    <button class="btn" onclick="openResumePopup()">👁️ View Resume</button>
+    <a href="assets/ALAPATI SRIVARSHINI.pdf" download class="btn">📥 Download Resume</a>
+  </div>
+  </section>
+
+  <!-- 🔍 Resume Preview Modal -->
+  <div id="resume-popup" class="popup">
+   <span class="close-btn" onclick="closeResumePopup()">×</span>
+   <iframe id="resume-frame" src="" frameborder="0"></iframe>
+  </div>
+
+  
+    
+
+
+    
+ <section id="contact" class="contact">
+  <h2>📬 Contact Me</h2>
+  <p>If you’d like to collaborate or have any questions, feel free to drop a message!</p>
+
+  <form class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+
+  <div id="form-message"></div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>© 2025 Alapati Srivarshini. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://github.com/srivarshini1012" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/alapati-srivarshini-0131b1308/" target="_blank">LinkedIn</a>
+      <a href="mailto:srivarshini1616@gmail.com">Email</a>
+    </div>
+  </footer>
+<script src="script.js"></script>
+</body>
+
+
+</html>
